@@ -2,15 +2,13 @@ import cv2
 import mediapipe as mp
 import numpy as np
 
-cap = cv2.VideoCapture("fingers.mp4")
+cap = cv2.VideoCapture("exercise1_r.mp4")
 mpHands = mp.solutions.hands
 hands = mpHands.Hands()
 mpDraw = mp.solutions.drawing_utils
-fingerCoordinates = [(8, 6), (12, 10), (16, 14), (20, 18)]
-thumbCoordinates = (4, 2)
 
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
-out = cv2.VideoWriter('output_video.avi', fourcc, 30.0, (int(cap.get(3)), int(cap.get(4))))
+out = cv2.VideoWriter('right1.avi', fourcc, 30.0, (int(cap.get(3)), int(cap.get(4))))
 
 while True:
     success, img = cap.read()
